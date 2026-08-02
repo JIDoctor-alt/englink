@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EngLink · 英语学习社区</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+  <div id="app">
+    <!-- ===== 顶部导航栏 ===== -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#/home" class="nav-logo">
+          <span class="logo-icon">E</span>
+          <span class="logo-text">EngLink</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#/home" data-route="home" class="nav-link active">首页</a></li>
+          <li><a href="#/learn" data-route="learn" class="nav-link">学习中心</a></li>
+          <li><a href="#/community" data-route="community" class="nav-link">社区论坛</a></li>
+          <li><a href="#/checkin" data-route="checkin" class="nav-link">学习打卡</a></li>
+          <li><a href="#/leaderboard" data-route="leaderboard" class="nav-link">排行榜</a></li>
+          <li><a href="#/profile" data-route="profile" class="nav-link">我的</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="nav-user" id="navUser">
+            <div class="nav-avatar" id="navAvatar">游</div>
+            <span class="nav-username" id="navUsername">游客</span>
+          </div>
+          <button class="nav-menu-btn" id="menuBtn" aria-label="菜单">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== 主内容区 ===== -->
+    <main class="main-content" id="mainContent">
+      <!-- 页面由 JS 动态渲染 -->
+    </main>
+
+    <!-- ===== 底部 ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-col footer-brand-col">
+            <div class="footer-brand">
+              <span class="logo-icon small">E</span>
+              <span>EngLink</span>
+            </div>
+            <p class="footer-desc">让英语学习不再孤单<br>Connect · Learn · Grow</p>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">联系方式</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:2775493312@qq.com">📧 2775493312@qq.com</a></li>
+              <li><a href="https://github.com/JIDoctor-alt/englink" target="_blank">🐙 GitHub 仓库</a></li>
+              <li><span>💬 微信: DonovanQiu</span></li>
+              <li><span>🐧 QQ群: 768306247</span></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">支持我们</h4>
+            <p class="footer-support-text">如果这个项目对你有帮助，可以请作者喝杯咖啡 ☕</p>
+            <button class="btn btn-primary btn-sm" onclick="openTipModal()">❤️ 打赏作者</button>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2026 EngLink Community. All rights reserved. · Made with ❤️</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== 发帖模态框 ===== -->
+  <div class="modal-overlay" id="postModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>发布新帖子</h3>
+        <button class="modal-close" id="postModalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>板块</label>
+          <select id="postCategory" class="form-input">
+            <option value="study">📚 学习方法</option>
+            <option value="exam">📝 考试备考</option>
+            <option value="career">💼 职场英语</option>
+            <option value="culture">🌍 文化交流</option>
+            <option value="resources">📂 资源分享</option>
+            <option value="free">🗣️ 自由讨论</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>标题</label>
+          <input type="text" id="postTitle" class="form-input" placeholder="给帖子起个吸引人的标题…" maxlength="50">
+        </div>
+        <div class="form-group">
+          <label>内容</label>
+          <textarea id="postContent" class="form-input form-textarea" placeholder="分享你的想法、问题或经验…" rows="6" maxlength="2000"></textarea>
+        </div>
+        <div class="form-group">
+          <label>标签（可选，用空格分隔）</label>
+          <input type="text" id="postTags" class="form-input" placeholder="如: 雅思 口语 写作">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="postCancel">取消</button>
+        <button class="btn btn-primary" id="postSubmit">发布</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 登录模态框 ===== -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal modal-sm">
+      <div class="modal-header">
+        <h3>加入 EngLink</h3>
+        <button class="modal-close" id="loginModalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>你的昵称</label>
+          <input type="text" id="loginName" class="form-input" placeholder="给自己起个英文名或昵称" maxlength="20">
+        </div>
+        <div class="form-group">
+          <label>一句话介绍（可选）</label>
+          <input type="text" id="loginBio" class="form-input" placeholder="如: 雅思7分冲刺中" maxlength="50">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="loginCancel">取消</button>
+        <button class="btn btn-primary" id="loginSubmit">开始学习之旅</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 打赏模态框 ===== -->
+  <div class="modal-overlay" id="tipModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>❤️ 打赏作者</h3>
+        <button class="modal-close" id="tipModalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="text-align:center; color:var(--text-secondary); margin-bottom:20px;">
+          感谢你的支持！你的鼓励是我持续更新的动力 🙏
+        </p>
+        <div class="tip-qr-row">
+          <div class="tip-qr-item">
+            <div class="tip-qr-code" id="wechatQr">
+              <img src="images/wechat-qr.png" alt="微信收款码" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="tip-qr-label">
+              <span class="tip-qr-icon" style="background:#07C160;">微</span>
+              微信赞赏
+            </div>
+          </div>
+          <div class="tip-qr-item">
+            <div class="tip-qr-code" id="alipayQr">
+              <img src="images/alipay-qr.jpg" alt="支付宝收款码" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="tip-qr-label">
+              <span class="tip-qr-icon" style="background:#1677FF;">支</span>
+              支付宝
+            </div>
+          </div>
+        </div>
+        <div class="tip-contact-box">
+          <div class="tip-contact-title">📬 其他联系方式</div>
+          <div class="tip-contact-list">
+            <div class="tip-contact-item">
+              <span class="tip-contact-icon">📧</span>
+              <span>邮箱: <a href="mailto:2775493312@qq.com" style="color:var(--primary);">2775493312@qq.com</a></span>
+            </div>
+            <div class="tip-contact-item">
+              <span class="tip-contact-icon">💬</span>
+              <span>微信: DonovanQiu</span>
+            </div>
+            <div class="tip-contact-item">
+              <span class="tip-contact-icon">🐧</span>
+              <span>QQ群: 768306247</span>
+            </div>
+            <div class="tip-contact-item">
+              <span class="tip-contact-icon">🐙</span>
+              <span>GitHub: <a href="https://github.com/JIDoctor-alt/englink" target="_blank" style="color:var(--primary);">JIDoctor-alt/englink</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="tipCancel">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Toast 提示 ===== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
