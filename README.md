@@ -1,4 +1,4 @@
-# EngLink · 英语学习社区
+﻿# EngLink · 英语学习社区
 
 <div align="center">
 
@@ -138,7 +138,59 @@ englink/
 | 🐧 QQ 群 | 768306247（雅思英语伴侣） |
 | 🐙 GitHub | [@JIDoctor-alt](https://github.com/JIDoctor-alt) |
 
-如果这个项目对你有帮助，欢迎 ⭐ Star 支持，也可以请作者喝杯咖啡 ☕（打开网站点击"打赏作者"）
+如果这个项目对你有帮助，欢迎 ⭐ Star 支持，也可以请作者喝杯咖啡 ☕
+
+---
+
+## 💰 打赏支持
+
+<div align="center">
+
+**扫码打赏，感谢支持！你的鼓励是持续更新的动力 🙏**
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/wechat-qr.png" width="200" alt="微信收款码"/>
+      <br/><b>💚 微信支付</b>
+    </td>
+    <td align="center">
+      <img src="images/alipay-qr.jpg" width="200" alt="支付宝收款码"/>
+      <br/><b>💙 支付宝</b>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+## 🤝 加入社群
+
+<div align="center">
+
+**扫码加入，一起学英语 👇**
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/wechat-contact.png" width="200" alt="微信联系方式"/>
+      <br/><b>💬 微信：DonovanQiu</b>
+    </td>
+    <td align="center">
+      <img src="images/qq-group.jpg" width="200" alt="QQ群二维码"/>
+      <br/><b>🐧 QQ群：768306247</b>
+      <br/><sub>雅思英语伴侣</sub>
+    </td>
+    <td align="center">
+      <img src="images/zhishixingqiu.jpg" width="200" alt="知识星球"/>
+      <br/><b>🌐 知识星球</b>
+      <br/><sub>AI 雅思英语学习伴侣</sub>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
